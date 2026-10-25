@@ -285,4 +285,179 @@ cd Bank-Fraud-Detection
 
 ---
 
-## 2
+## 2. Backend Setup
+
+Navigate to the backend directory:
+
+```bash
+cd Backend
+```
+
+Install Node.js dependencies:
+
+```bash
+npm install
+```
+
+Start the backend server:
+
+```bash
+npm start
+```
+
+---
+
+## 3. Python Environment
+
+From the project root, install the Python dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+If using a virtual environment:
+
+```bash
+python -m venv venv
+```
+
+### Windows
+
+```bash
+venv\Scripts\activate
+```
+
+Then:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 4. Frontend Setup
+
+Open another terminal:
+
+```bash
+cd Frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the Vite development server:
+
+```bash
+npm run dev
+```
+
+The terminal will provide the local URL for the React application.
+
+---
+
+# 🔌 API
+
+### Prediction Endpoint
+
+```http
+POST /api/predict
+```
+
+The endpoint accepts transaction information in JSON format and returns a fraud-risk prediction.
+
+### Example Request
+
+```json
+{
+  "amount": 15000,
+  "transactionType": "TRANSFER",
+  "oldBalance": 20000,
+  "newBalance": 5000
+}
+```
+
+### Example Response
+
+```json
+{
+  "probability": 0.92,
+  "risk": "High Risk",
+  "fraud": true
+}
+```
+
+> Request and response fields should be updated to match the actual backend implementation.
+
+---
+
+# 📈 Model Performance
+
+The model is evaluated using metrics suitable for highly imbalanced fraud-detection datasets.
+
+Important metrics include:
+
+- **Precision**
+- **Recall**
+- **F1 Score**
+- **ROC-AUC**
+- **Confusion Matrix**
+
+Because fraudulent transactions typically represent a small percentage of total transactions, **recall and precision are considered alongside overall accuracy**.
+
+---
+
+# 🔐 Security Considerations
+
+For production deployment, the following should be considered:
+
+- API authentication
+- Input sanitization
+- Rate limiting
+- HTTPS
+- Secure model storage
+- Environment variables for secrets
+- Logging and monitoring
+- Database security
+- Access control
+- Protection of sensitive transaction data
+
+---
+
+# 🔮 Future Improvements
+
+Potential future enhancements include:
+
+- Real-time streaming with Kafka
+- Database-backed transaction history
+- Automated model retraining
+- Explainable AI using SHAP
+- User authentication and role-based access
+- Advanced anomaly detection
+- Cloud deployment
+- Docker containerization
+- Model monitoring and drift detection
+- Email/SMS fraud notifications
+- Advanced fraud investigation dashboard
+
+---
+
+# 👩‍💻 Project
+
+**Bank Fraud Detection System**
+
+Built using:
+
+```text
+React + Vite
+Node.js + Express
+Python
+XGBoost
+Machine Learning
+REST APIs
+```
+
+The goal of the project is to provide an intelligent transaction monitoring system capable of identifying potentially fraudulent activity and presenting actionable risk information through a real-time dashboard.
